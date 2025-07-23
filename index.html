@@ -175,8 +175,8 @@
       let totalTabung = Number(localStorage.getItem("tabungan")) || 0;
       let riwayat = JSON.parse(localStorage.getItem("riwayat")) || [];
     
-      tTarget.textContent = `Rp.${target}`;
-      tTabung.textContent = `Rp.${totalTabung}`;
+      tTarget.textContent = `Rp.${target.toLocaleString("id-ID")}`;
+      tTabung.textContent = `Rp.${totalTabung.toLocaleString("id-ID")}`;
       if (target > 0) {
         const persen = Math.min((totalTabung / target) * 100, 100);
         progressBar.style.width = `${persen}%`;
